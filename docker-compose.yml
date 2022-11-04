@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  spring:
+    build:
+      context: .
+      dockerfile: dockerfile-java
+    container_name: spring
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+  db:
+    build:
+      context: .
+      dockerfile: dockerfile-db
+    container_name: db_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: spring
+      MYSQL_USER: spring
+      MYSQL_PASSWORD: spring
+    volumes:
+      - ./db:/var/lib/mysql
+volumes:
+  db_data:
+    driver: local

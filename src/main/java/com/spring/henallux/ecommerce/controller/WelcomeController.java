@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class WelcomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String home(Model model) {
-        return "welcome";
-    }
+        return "integrated:basket";
+    } // changer fichier pour test
 }

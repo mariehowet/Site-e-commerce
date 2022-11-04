@@ -1,0 +1,17 @@
+FROM openjdk:17-alpine
+
+EXPOSE 8080
+
+RUN apk update
+
+RUN apk add maven --quiet
+
+WORKDIR /app
+
+COPY pom.xml /app/
+
+COPY ./src /app/src/
+
+RUN mvn clean install
+
+CMD ["mvn", "spring-boot:run"]
