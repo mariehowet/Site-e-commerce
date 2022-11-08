@@ -15,6 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <header>
@@ -86,10 +87,12 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <h3>FR</h3>
-                <h3><i class="bi bi-globe"></i></h3>
-                <h3><i class="bi bi-person-circle"></i></h3>
-                <h3><i class="bi bi-cart"></i></h3>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p class="text-white">FR</p>
+                    <i class="bi bi-globe text-white"></i>
+                    <i class="bi bi-person-circle text-white"></i>
+                    <i class="bi bi-cart text-white"></i>
+                </div>
             </div>
         </div>
     </nav>

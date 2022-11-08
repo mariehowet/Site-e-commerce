@@ -12,6 +12,7 @@ services:
       - db
     volumes:
       - .:/app
+    network_mode: "host"
   db:
     build:
       context: .
