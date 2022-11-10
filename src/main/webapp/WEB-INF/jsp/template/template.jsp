@@ -14,11 +14,10 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
 </head>
-<body>
-<header>
+
+<body >
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
@@ -103,7 +102,40 @@
 </div>
 
 <!--Votre code---->
-<footer class="text-center text-lg-start bg-light text-muted">
+<!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
 
     <!-- Section: Links  -->
     <section class="">
@@ -117,9 +149,8 @@
                         <i class="fas fa-gem me-3"></i>Company name
                     </h6>
                     <p>
-                        L'endroit idéal pour retrouver
-                        les vêtements des friperies
-                        de votre région.
+                        Here you can use rows and columns to organize your footer content. Lorem ipsum
+                        dolor sit amet, consectetur adipisicing elit.
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -131,19 +162,16 @@
                         Products
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Femme</a>
+                        <a href="#!" class="text-reset">Angular</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Homme</a>
+                        <a href="#!" class="text-reset">React</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Enfant</a>
+                        <a href="#!" class="text-reset">Vue</a>
                     </p>
                     <p>
-                        <a href="#!" class="text-reset">Marques</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Friperies</a>
+                        <a href="#!" class="text-reset">Laravel</a>
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -195,5 +223,7 @@
     </div>
     <!-- Copyright -->
 </footer>
+<!-- Footer -->
+
 </body>
 </html>
