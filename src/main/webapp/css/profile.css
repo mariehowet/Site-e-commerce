@@ -1,0 +1,7 @@
+div.form {
+    height: auto;
+    padding-left: 40px;
+    border-left: 3px solid black;
+    margin-left: 200px;
+    display: inline-block;
+}
