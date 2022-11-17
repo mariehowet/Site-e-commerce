@@ -15,7 +15,7 @@ public class ListOrdersControler {
     @RequestMapping(method = RequestMethod.GET)
     public String home(Model model){
         model.addAttribute("listOrders", new Order());
-        return "listOrders";
+        return "integrated:listOrders";
     }
     @RequestMapping(value="/send",method=RequestMethod.POST)
     public String getFormData(@ModelAttribute(value="listOrders") Order order){

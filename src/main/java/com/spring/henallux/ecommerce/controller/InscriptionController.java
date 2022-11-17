@@ -13,7 +13,7 @@ public class InscriptionController {
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model) {
         model.addAttribute("currentUser", new Customer());
-        return "signForm";
+        return "integrated:signForm";
     }
     @RequestMapping(value="/send",method=RequestMethod.POST)
     public String getFormData(@ModelAttribute(value="currentUser")Customer customer){
