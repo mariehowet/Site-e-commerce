@@ -25,7 +25,7 @@ public class ProfileController {
         //model.addAttribute("firstName", customer.getFirstName());
         //model.addAttribute("lastName", customer.getLastName());
         //model.addAttribute("email", customer.getEmail());
-        return "profile";
+        return "integrated:profile";
     }
     @RequestMapping(value="/send",method=RequestMethod.POST)
     public String getFormData(Model model, Customer customer){
