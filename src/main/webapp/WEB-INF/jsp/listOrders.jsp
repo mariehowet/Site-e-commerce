@@ -11,32 +11,57 @@
 
 </head>
 <body>
-<div class="form">
-    <h1>Mes commandes</h1> <br>
+<nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">Accueil</li>
+        <li class="breadcrumb-item active" aria-current="page">Mes commandes</li>
+    </ol>
+</nav>
 
-    <form:form id = "listOrders"
-               method="POST"
-               action="/ecommerce/orders"
-               modelAttribute="listOrders">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="mt-3">
 
-        <form:button>Toutes les commandes</form:button>&emsp;
-        <form:button>En attente</form:button>&emsp;
-        <form:button>Expédiés</form:button>&emsp;
-        <form:button>Annulées</form:button>&emsp;
-        <br><br>
+                <h1 class="h3 mb-3 font-weight-normal">Mes commandes</h1>
+                <div class="mb-3">
+                <button type="button" class="btn btn-secondary">Toutes les commandes</button>
+                <button type="button" class="btn btn-secondary">En attente</button>
+                <button type="button" class="btn btn-secondary">Expédiés</button>
+                <button type="button" class="btn btn-secondary">Annulées</button>
+                </div>
+                <div class="form">
 
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Numéro de commande</th>
-            </tr>
-            <tr>
-               <td>Image cap</td>
-                <td>Détails</td>
-            </tr>
-        </table>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-primary">
+                            <tr>
+                                <th>Date</th>
+                                <th>Numéro de commandes</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-    </form:form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                </div>
+        </div>
+        </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"76c01b8e8f1eb9b9","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.0","si":100}' crossorigin="anonymous"></script>
+
+
+
+
+
 </div>
 </body>
 </html>
