@@ -14,16 +14,15 @@
     <title>Panier</title>
 </head>
 <body>
-
     <nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Accueil</li>
             <li class="breadcrumb-item active" aria-current="page">Panier</li>
         </ol>
     </nav>
-    <section class="h-100 h-custom" >
+
     <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="row d-flex justify-content-center align-items-center ">
             <div class="col-12">
                 <div class="card card-registration card-registration-2" style="border-radius: 15px;">
                     <div class="card-body p-0">
@@ -160,6 +159,11 @@
                                     </div>
 
                                     <div class="d-flex justify-content-between mb-4">
+                                        <h5 class="text-uppercase">Promo</h5>
+                                        <h5>- € 10</h5>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-4">
                                         <h5 class="text-uppercase">transport</h5>
                                         <h5>Gratuit</h5>
                                     </div>
@@ -189,6 +193,5 @@
             </div>
         </div>
     </div>
-    </section>
 </body>
 </html>

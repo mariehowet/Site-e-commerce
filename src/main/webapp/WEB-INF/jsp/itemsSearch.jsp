@@ -34,7 +34,7 @@
 <body>
     <!-- petite navBar avec le type de recherche choisie (femme, homme, enfant, marques ou friperie) -->
     <div id="breadcrumb_container">
-        <nav aria-label="breadcrumb">
+        <nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Accueil</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Femme</li>
