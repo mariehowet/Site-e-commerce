@@ -15,12 +15,12 @@
 <nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Accueil</li>
-        <li class="breadcrumb-item active" aria-current="page">Mes adresses</li>
+        <li class="breadcrumb-item active" aria-current="page">Mon adresse</li>
     </ol>
 </nav>
 <div class="container">
 <form class="row g-3 m-2" >
-    <h1 class="h3 mb-3 font-weight-normal">Mes adresses</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Mon adresse</h1>
     <div class="col-12">
         <label for="inputAddress" class="form-label">Rue *</label>
         <input type="text" class="form-control" id="inputAddress">
@@ -40,6 +40,7 @@
     <p>* Champs obligatoires</p><br>
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Modifier</button>
+        <br><br>
     </div>
 </form>
 </div>

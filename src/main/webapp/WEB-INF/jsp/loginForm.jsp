@@ -27,6 +27,7 @@
            method="POST"
            action="/ecommerce/login"
            modelAttribute="currentUser">
+
     <form:label path="email"> Adresse e-mail * </form:label><br>
     <form:input path="email"/>
 
@@ -40,10 +41,10 @@
     <p>* Champs obligatoires</p><br>
     <%--<form:checkbox path="remember" value="false" label="Se souvenir de moi"/>--%>
 
-    <form:button>Se connecter</form:button>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
 
     <hr>
-    <p>Nouveau ici ? Inscris-toi.</p>
+    <p>Nouveau ici ? <a href="<spring:url value='/inscription' />"> Inscris-toi.</a></p>
 
     <p>Mot de passe oublié ?</p>
 
