@@ -62,6 +62,8 @@
     </style>
 </head>
 <body>
+
+
 <!-- Vertical navbar -->
 <div class="vertical-nav" id="sidebar">
 
@@ -76,19 +78,19 @@
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
                 <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                About
+                Mes commandes
             </a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
                 <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-                Services
+                Mon adresse
             </a>
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link text-dark font-italic">
                 <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-                Gallery
+                Déconnexion
             </a>
         </li>
     </ul>
@@ -123,34 +125,14 @@
 
                 </div>
             </div>
-
         </div>
+
+
 
     </div>
 
 </div>
 <!-- End demo content -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
