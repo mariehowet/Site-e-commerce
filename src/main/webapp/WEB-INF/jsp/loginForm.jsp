@@ -25,28 +25,27 @@
 
 <form:form id = "loginForm"
            method="POST"
-           action="/ecommerce/login"
-           modelAttribute="currentUser">
+           modelAttribute="customer">
 
-    <form:label path="email"> Adresse e-mail * </form:label><br>
-    <form:input path="email"/>
+    <form:label path="username"> Nom d'utilisateur * </form:label><br>
+    <form:input path="username"/>
 
     <br><br>
 
     <form:label path="password"> Mot de passe * </form:label><br>
-    <form:input path="password"/>
+    <form:input path="password" type="password"/>
 
     <br>
 
     <p>* Champs obligatoires</p><br>
     <%--<form:checkbox path="remember" value="false" label="Se souvenir de moi"/>--%>
 
-    <button type="submit" class="btn btn-primary">Se connecter</button>
+    <form:button type="submit" class="btn btn-primary">Se connecter</form:button>
 
-    <hr>
+    <br>
     <p>Nouveau ici ? <a href="<spring:url value='/inscription' />"> Inscris-toi.</a></p>
 
-    <p>Mot de passe oublié ?</p>
+    <%--<p>Mot de passe oublié ?</p>--%>
 
 
 </form:form>

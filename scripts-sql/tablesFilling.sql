@@ -190,12 +190,14 @@ FROM item;
 
 -- Tables avec quelques valeurs pour les essais :
 -- customer
-INSERT INTO customer (email, password, firstName, lastName, deliveryAdress, phoneNumber, birthDate)
-VALUES ('etu47233@henallux.be', 'password1', 'Julien', 'Hanquet', 'Rue Jean-Baptiste Fichefet 58, 5100 Namur', '0499637147', '1999-07-17');
-INSERT INTO customer (email, password, firstName, lastName, deliveryAdress, phoneNumber, birthDate)
-VALUES ('etu47124@henallux.be', 'password2', 'Marie', 'Howet', 'sais pas', 'sais pas', '2000-07-25');
-INSERT INTO customer (email, password, firstName, lastName, deliveryAdress, phoneNumber, birthDate)
-VALUES ('etu45806@henallux.be', 'password3', 'Caroline', 'Dubois', 'sais pas', 'sais pas', '2001-08-03');
+INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
+VALUES ('juju', 'etu47233@henallux.be', 'password1', 'Julien', 'Hanquet', 'Rue Jean-Baptiste Fichefet 58, 5100 Namur', '0499637147', '1999-07-17', 'ROLE_USER', true, true, true, true);
+INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
+VALUES ('mama', 'etu47124@henallux.be', 'password2', 'Marie', 'Howet', 'sais pas', 'sais pas', '2000-07-25', 'ROLE_USER', true, true, true, true);
+INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
+VALUES ('caro', 'etu45806@henallux.be', 'password3', 'Caroline', 'Dubois', 'sais pas', 'sais pas', '2001-08-03', 'ROLE_USER', true, true, true, true);
+INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
+VALUES  ('memel', 'melvinparache@hotmail.be','$2a$10$b6NNXDj7f23qRGQHa7H.e.wN4griKtjRGKDt5oKK.lXiKX1slCohK', 'Melvin', 'Parache', 'Rue haynol', '0496', '2002-01-17', 'ROLE-USER', true, true, true, true);
 -- test
 SELECT *
 FROM customer;

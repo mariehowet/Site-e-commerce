@@ -7,13 +7,19 @@ DROP TABLE IF EXISTS language CASCADE;
 DROP TABLE IF EXISTS customer CASCADE;
 
 CREATE TABLE customer(
-    email VARCHAR(255) PRIMARY KEY,
-    password VARCHAR(255) NOT NULL,
-    firstName VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
-    deliveryAdress VARCHAR(255),
-    phoneNumber VARCHAR(255),
-    birthDate DATE,
+    username VARCHAR(255) PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    delivery_address VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(255),
+    birthdate DATE NOT NULL,
+    authorities varchar(45) NOT NULL,
+    account_non_expired BOOLEAN NOT NULL,
+    account_non_locked BOOLEAN NOT NULL,
+    credentials_non_expired BOOLEAN NOT NULL,
+    enabled BOOLEAN DEFAULT NULL,
     CONSTRAINT CHK_customer CHECK (email LIKE '%@%.%')
 );
 -- DF customer
@@ -64,7 +70,7 @@ CREATE TABLE `order`(
     `date` DATE NOT NULL,
     is_paid BOOLEAN NOT NULL,
     customer_id VARCHAR(255),
-    FOREIGN KEY (customer_id) REFERENCES customer(email)
+    FOREIGN KEY (customer_id) REFERENCES customer(username)
 );
 -- DF language
 -- id -> date

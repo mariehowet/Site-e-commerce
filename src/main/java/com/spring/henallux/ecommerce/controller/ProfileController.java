@@ -21,15 +21,11 @@ public class ProfileController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model) {
-        model.addAttribute("currentUser", new Customer());
+
         //model.addAttribute("firstName", customer.getFirstName());
         //model.addAttribute("lastName", customer.getLastName());
         //model.addAttribute("email", customer.getEmail());
         return "integrated:profile";
-    }
-    @RequestMapping(value="/send",method=RequestMethod.POST)
-    public String getFormData(Model model, Customer customer){
-        return "redirect:/profile";
     }
 
 }

@@ -26,44 +26,61 @@
 
     <form:form id = "signForm"
                method="POST"
-               action="/ecommerce/inscription"
-               modelAttribute="currentUser">
+               action="/ecommerce/inscription/send"
+               modelAttribute="customer">
 
         <form:label path="lastName"> Nom * </form:label><br>
         <form:input path="lastName"/>
+        <form:errors path="lastName"/>
         <br><br>
+
         <form:label path="firstName"> Prénom * </form:label><br>
         <form:input path="firstName"/>
+        <form:errors path="firstName"/>
         <br><br>
 
         <form:label path="birthdate" class="control-label " for="date"> Date de naissance * </form:label><br>
+        <form:input path="birthdate" id="date" name="date" placeholder="mm/dd/yyyy" type="date" />
+        <form:errors path="birthdate"/>
+        <br><br>
 
-            <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-            </div>
-            <form:input path="birthdate" id="date" name="date" placeholder="mm/dd/yyyy" type="date" />
-            <form:errors path="birthdate"/>
-            <br><br>
+        <form:label path="deliveryAddress"> Adresse de livraison * </form:label><br>
+        <form:input path="deliveryAddress" />
+        <form:errors path="deliveryAddress"/>
+        <br><br>
 
+        <form:label path="phoneNumber"> Numéro de téléphone </form:label><br>
+        <form:input path="phoneNumber" type="tel" pattern="[0-9]*"/>
+        <form:errors path="phoneNumber"/>
+        <br><br>
 
-
-       <form:label path="email"> Adresse e-mail * </form:label><br>
-       <form:input path="email"/>
-
+       <form:label path="username"> Nom d'utilisateur * </form:label><br>
+       <form:input path="username"/>
+        <form:errors path="username"/>
        <br><br>
 
-       <form:label path="password"> Mot de passe * </form:label><br>
-       <form:input path="password"/>
+        <form:label path="email"> Email * </form:label><br>
+        <form:input path="email" type="email"/>
+        <form:errors path="email"/>
+        <br><br>
 
-       <br>
+       <form:label path="password"> Mot de passe * </form:label><br>
+       <form:input path="password" type="password"/>
+        <form:errors path="password"/>
+       <br><br>
+
+        <form:label path="confirmPassword"> Mot de passe * </form:label><br>
+        <form:input path="confirmPassword" type="password"/>
+        <form:errors path="confirmPassword"/>
+        <br><br>
 
        <p>* Champs obligatoires</p><br>
        <%--<form:checkbox path="remember" value="false" label="Se souvenir de moi"/>--%>
 
-        <button type="submit" class="btn btn-primary">S'inscrire</button>
+        <form:button type="submit" class="btn btn-primary">S'inscrire</form:button>
 
         <hr>
-        <p>Déjà inscris ? <a href="<spring:url value='/login' />">Connecte-toi.</a></p>
+        <p>Déjà inscris ? <a href="<spring:url value='/profile' />">Connecte-toi.</a></p>
 
 
     </form:form>

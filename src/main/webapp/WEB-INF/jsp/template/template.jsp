@@ -14,6 +14,20 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <spring:url var="localeFr" value="">
+        <spring:param name="locale" value="fr"/>
+    </spring:url>
+
+    <spring:url var="localeEn" value="">
+        <spring:param name="locale" value="en"/>
+    </spring:url>
+
+    <style>
+        i {
+            font-size: 25px;
+        }
+    </style>
 </head>
 
 <body >
@@ -82,16 +96,30 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+
+
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <p class="text-white">FR</p>
-                    <i class="bi bi-globe text-white"></i>
-                    <i class="bi bi-person-circle text-white"></i>
-                    <i class="bi bi-cart text-white"></i>
+                    <a href="${localeFr}">
+                        <img height="25" width="32" id="fr" alt="fr" src='<spring:url value="/images/localeFr.png"/>' />
+                    </a>
+
+                    <a href="${localeEn}">
+                        <img height="25" width="32" id="en" alt="en" src='<spring:url value="/images/localeEn.png"/>' />
+                    </a>
+                    <a href="<spring:url value="/profile"/>">
+                        <i height="25" width="25" class="bi bi-person-circle text-white"></i>
+                    </a>
+                    <a href="<spring:url value="/basket"/>">
+                        <i height="25" width="25" class="bi bi-cart text-white"></i>
+                    </a>
                 </div>
+                <sec:authorize access="isAuthenticated()">
+                    <p class="text-white">Bonjour ${pageContext.request.userPrincipal.principal.firstName}</p>
+                    <a href='<spring:url value="/logout"/>'>
+                        <button class="btn btn-primary" type="submit">Se déconnecter</button>
+                    </a>
+                </sec:authorize>
             </div>
         </div>
     </nav>
