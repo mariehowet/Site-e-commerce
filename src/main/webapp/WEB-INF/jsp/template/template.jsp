@@ -31,73 +31,34 @@
 </head>
 
 <body >
-  <header>
+<header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href='<spring:url value="/welcome"/>'>FripFrite</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Femme
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Catégories
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Robe</a></li>
-                            <li><a class="dropdown-item" href="#">Veste</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pantalon</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Homme
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Robe</a></li>
-                            <li><a class="dropdown-item" href="#">Veste</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pantalon</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Enfant
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Robe</a></li>
-                            <li><a class="dropdown-item" href="#">Veste</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pantalon</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Marques
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Robe</a></li>
-                            <li><a class="dropdown-item" href="#">Veste</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pantalon</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Friperies
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Robe</a></li>
-                            <li><a class="dropdown-item" href="#">Veste</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Pantalon</a></li>
+                            <c:forEach items = "${categoriesTranslations}" var="categoryTranslation">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href='<spring:url value="/categoryItems">
+                                                <spring:param name="category" value="${categoryTranslation.categoryId}"/>
+                                             </spring:url>'>
+
+                                            ${categoryTranslation.name}
+                                    </a>
+                                </li>
+                            </c:forEach>
                         </ul>
                     </li>
                 </ul>
-
-
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="${localeFr}">
@@ -113,13 +74,13 @@
                     <a href="<spring:url value="/basket"/>">
                         <i height="25" width="25" class="bi bi-cart text-white"></i>
                     </a>
+                    <sec:authorize access="isAuthenticated()">
+                        <p class="text-white">Bonjour ${pageContext.request.userPrincipal.principal.firstName}</p>
+                        <a href='<spring:url value="/logout"/>'>
+                            <button class="btn btn-primary" type="submit">Se déconnecter</button>
+                        </a>
+                    </sec:authorize>
                 </div>
-                <sec:authorize access="isAuthenticated()">
-                    <p class="text-white">Bonjour ${pageContext.request.userPrincipal.principal.firstName}</p>
-                    <a href='<spring:url value="/logout"/>'>
-                        <button class="btn btn-primary" type="submit">Se déconnecter</button>
-                    </a>
-                </sec:authorize>
             </div>
         </div>
     </nav>
@@ -176,10 +137,9 @@
                     <h6 class="text-uppercase fw-bold mb-4">
                         <i class="fas fa-gem me-3"></i>Company name
                     </h6>
-                    <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
-                    </p>
+                    <a href="<spring:url value="/companyDescription"/>">
+                        Nous
+                    </a>
                 </div>
                 <!-- Grid column -->
 

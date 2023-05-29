@@ -16,5 +16,34 @@ import java.util.Locale;
 
 @Configuration
 public class MainConfiguration implements WebMvcConfigurer{
+    @Bean
+    public DefaultMessageCodesResolver defaultMessageCodesResolver() {
+        DefaultMessageCodesResolver defaultMessageCodesResolver = new DefaultMessageCodesResolver();
+        return defaultMessageCodesResolver;
+    }
 
+    @Bean
+    public ResourceBundleMessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setBasenames("translations/general","translations/errors");
+        messageSource.setUseCodeAsDefaultMessage(true);
+        return messageSource;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+        interceptor.setParamName("locale");
+        registry.addInterceptor(interceptor);
+    }
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        CookieLocaleResolver resolver = new CookieLocaleResolver();
+        resolver.setDefaultLocale(new Locale("fr"));
+        resolver.setCookieName("localeCookie");
+        resolver.setCookieMaxAge(-1);
+        return resolver;
+    }
 }

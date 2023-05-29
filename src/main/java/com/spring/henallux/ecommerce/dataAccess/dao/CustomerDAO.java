@@ -13,12 +13,12 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CustomerDao implements CustomerDataAccess {
+public class CustomerDAO implements CustomerDataAccess {
     private CustomerRepository customerRepository;
     private ProviderConverter providerConverter;
 
     @Autowired
-    public CustomerDao(CustomerRepository customerRepository, ProviderConverter providerConverter) {
+    public CustomerDAO(CustomerRepository customerRepository, ProviderConverter providerConverter) {
         this.customerRepository = customerRepository;
         this.providerConverter = providerConverter;
     }

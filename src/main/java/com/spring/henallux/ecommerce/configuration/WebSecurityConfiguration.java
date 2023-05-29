@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final String LOGIN_REQUEST = "/login";
-    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/accueil","/inscription","/inscription/send", "/css/**","/images/**"};
+    private static final String[] AUTHORIZED_REQUESTS_ANYBODY = new String[]{"/basket/deleteToBasket","/basket/addToBasket","/basket","/item","/categoryItems","/welcome","/companyDescription","/accueil","/inscription","/inscription/send", "/css/**","/images/**"};
     private static final String[] AUTHORIZED_REQUESTS_ADMIN = new String[]{"/admin"};
 
     private UserDetailsService userDetailsServiceImpl;
@@ -48,7 +48,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout() // We define the logout part here - By default : URL = "/logout"
                 //.logoutUrl("...") // If other link than "/logout" (that is by default)
-                .logoutSuccessUrl("/shop")  // URL to return if logout is successfull
+                .logoutSuccessUrl("/welcome")  // URL to return if logout is successfull
                 .permitAll(); // To make the logout available for any user
     }
 

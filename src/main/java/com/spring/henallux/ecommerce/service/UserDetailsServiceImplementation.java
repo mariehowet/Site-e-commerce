@@ -1,6 +1,6 @@
 package com.spring.henallux.ecommerce.service;
 
-import com.spring.henallux.ecommerce.dataAccess.dao.CustomerDao;
+import com.spring.henallux.ecommerce.dataAccess.dao.CustomerDAO;
 import com.spring.henallux.ecommerce.dataAccess.dao.CustomerDataAccess;
 import com.spring.henallux.ecommerce.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class UserDetailsServiceImplementation implements UserDetailsService {
     private CustomerDataAccess customerDataAccess;
 
     @Autowired
-    public UserDetailsServiceImplementation(CustomerDao customerDao) {
+    public UserDetailsServiceImplementation(CustomerDAO customerDao) {
         this.customerDataAccess = customerDao;
     }
 
