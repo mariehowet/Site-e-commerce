@@ -108,8 +108,10 @@
                                         <h5>€ 137.00</h5>
                                     </div>
 
+                                    <a href="<spring:url value="/payment"/>">
                                     <button type="button" class="btn btn-dark btn-block btn-lg"
                                             data-mdb-ripple-color="dark">Commander</button>
+                                    </a>
 
                                     <div class="card mb-4 mb-lg-0 mt-4">
                                         <div class="card-body">

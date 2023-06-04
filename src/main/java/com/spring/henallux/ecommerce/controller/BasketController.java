@@ -8,6 +8,7 @@ import com.spring.henallux.ecommerce.dataAccess.dao.ItemDataAccess;
 import com.spring.henallux.ecommerce.model.Basket;
 import com.spring.henallux.ecommerce.model.Item;
 import com.spring.henallux.ecommerce.model.OrderRow;
+import com.spring.henallux.ecommerce.model.UrlParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
-import static com.spring.henallux.ecommerce.Constants.CATEGORIES_TRANSLATIONS;
+import static com.spring.henallux.ecommerce.Constants.*;
 
 @Controller
 @RequestMapping(value = "/basket")
@@ -35,8 +36,13 @@ public class BasketController extends SuperController {
 
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home(Model model, @ModelAttribute(value = Constants.BASKET) Basket basket) {
+    public String home(Model model,
+                       @ModelAttribute(value = Constants.BASKET) Basket basket,
+                       @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam) {
         model.addAttribute(CATEGORIES_TRANSLATIONS, this.getCategoriesTranslationsByCurrentLocale());
+        urlParam.setName(null);
+        urlParam.setValue(null);
+        model.addAttribute(CURRENT_URL_PARAM, urlParam);
         model.addAttribute("list",basket.getList());
 
         return "integrated:basket";

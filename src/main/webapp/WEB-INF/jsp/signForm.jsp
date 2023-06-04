@@ -24,6 +24,7 @@
 <div class="form"><br>
     <h1>Inscris-toi</h1> <br>
 
+
     <form:form id = "signForm"
                method="POST"
                action="/ecommerce/inscription/send"
@@ -81,7 +82,6 @@
 
         <hr>
         <p>Déjà inscris ? <a href="<spring:url value='/profile' />">Connecte-toi.</a></p>
-
 
     </form:form>
 </div>

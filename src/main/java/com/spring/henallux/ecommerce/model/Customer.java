@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -25,15 +26,16 @@ public class Customer implements UserDetails {
     private String email;
 
     @NotEmpty
+    @Size(min=3, max=45)
     private String firstName;
 
     @NotEmpty
+    @Size(min=3, max=45)
     private String lastName;
 
     @NotEmpty
     private String deliveryAddress;
 
-    @NumberFormat
     private String phoneNumber;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -41,6 +43,7 @@ public class Customer implements UserDetails {
     private Date birthdate;
 
     @NotEmpty
+    @Size(min=6, max=60)
     private String password;
 
     @NotEmpty
@@ -164,7 +167,8 @@ public class Customer implements UserDetails {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+
+        this.phoneNumber = phoneNumber.trim().equals("") ? null : phoneNumber;
     }
 
     public void setBirthdate(Date birthdate) {

@@ -17,10 +17,16 @@
 
     <spring:url var="localeFr" value="">
         <spring:param name="locale" value="fr"/>
+        <c:if test="${currentUrlParam.name != null && currentUrlParam.value != null}">
+            <spring:param name="${currentUrlParam.name}" value="${currentUrlParam.value}"/>
+        </c:if>
     </spring:url>
 
     <spring:url var="localeEn" value="">
         <spring:param name="locale" value="en"/>
+        <c:if test="${currentUrlParam.name != null && currentUrlParam.value != null}">
+            <spring:param name="${currentUrlParam.name}" value="${currentUrlParam.value}"/>
+        </c:if>
     </spring:url>
 
     <style>

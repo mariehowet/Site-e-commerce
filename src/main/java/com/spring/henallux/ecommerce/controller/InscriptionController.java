@@ -1,9 +1,11 @@
 package com.spring.henallux.ecommerce.controller;
 
+import com.spring.henallux.ecommerce.Constants;
 import com.spring.henallux.ecommerce.dataAccess.dao.CategoryTranslationDAO;
 import com.spring.henallux.ecommerce.dataAccess.dao.CustomerDAO;
 import com.spring.henallux.ecommerce.dataAccess.dao.CustomerDataAccess;
 import com.spring.henallux.ecommerce.model.Customer;
+import com.spring.henallux.ecommerce.model.UrlParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.validation.Valid;
 
-import static com.spring.henallux.ecommerce.Constants.CATEGORIES_TRANSLATIONS;
+import static com.spring.henallux.ecommerce.Constants.*;
 
 @Controller
 @RequestMapping(value="/inscription")
@@ -30,8 +32,12 @@ public class InscriptionController extends SuperController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String home (Model model) {
+    public String home (Model model,
+                        @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam) {
         model.addAttribute(CATEGORIES_TRANSLATIONS, this.getCategoriesTranslationsByCurrentLocale());
+        urlParam.setName(null);
+        urlParam.setValue(null);
+        model.addAttribute(CURRENT_URL_PARAM, urlParam);
         model.addAttribute("customer", new Customer());
         return "integrated:signForm";
     }
@@ -51,10 +57,8 @@ public class InscriptionController extends SuperController {
                             customer.setEnabled(true);
 
                             try {
-                                System.out.println("je passe");
                                 customerDataAccess.save(customer);
                             } catch (Exception e) {
-                                System.out.println("je suis catch");
                                 System.out.println(e.getMessage());
                                 return "integrated:signForm";
                             }
@@ -69,7 +73,7 @@ public class InscriptionController extends SuperController {
                             customer.setPhoneNumber("");
                             customer.setBirthdate(null);
 
-                            return "integrated:signForm";
+                            return "integrated:accountCreated";
 
                         } else {
                             errors.rejectValue("confirmPassword", "error.confirmPassword", "Les mots de passe ne sont pas identiques");
@@ -77,7 +81,6 @@ public class InscriptionController extends SuperController {
                             return "integrated:signForm";
                         }
                     } else {
-                        System.out.println(customer.getPassword().trim());
                         errors.rejectValue("password", "error.emptyPassword", "Mot de passe vide");
                         customer.setConfirmPassword("");
                         return "integrated:signForm";
