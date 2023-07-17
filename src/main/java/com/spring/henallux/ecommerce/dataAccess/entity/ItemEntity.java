@@ -24,7 +24,7 @@ public class ItemEntity {
     @Column(name="thrift_shop")
     private String thriftShop;
     @Column(name="category_Id")
-    private String categoryId;
+    private String categoryId; // TODO : @JoinColumn @ManyToOne ???
 
 
     public ItemEntity() {

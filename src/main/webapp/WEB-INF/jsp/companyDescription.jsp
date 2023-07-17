@@ -9,7 +9,6 @@
 <%@ include file="include/importTags.jsp"%>
 <html>
 <head>
-    <title>Description</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <style>
         h1,p {
@@ -25,14 +24,12 @@
 </head>
 <body>
     <div class="py-5 container">
-        <h1>Notre société</h1>
+        <h1><spring:message code="aboutUs"/></h1>
         <br>
         <img width="800" height="497" src='<spring:url value="/images/company.jpg"/>'>
         <br><br>
         <p>
-            Il est parfois compliqué de savoir ce qu’on peut trouver en allant dans une friperie.
-            C’est pour cela que notre fripereie à décidé de créer son propre site Web.
-            Nous pouvons donc y trouver n’importe quels vêtements dépendant de ce qui a été apporté en boutique.
+            <spring:message code="aboutUsDescription"/>
         </p>
     </div>
 </body>

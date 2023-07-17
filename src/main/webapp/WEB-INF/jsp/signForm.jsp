@@ -5,7 +5,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <title> Inscription </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -13,16 +12,9 @@
 
 </head>
 <body>
-<nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Accueil</li>
-        <li class="breadcrumb-item active" aria-current="page">Inscription</li>
-    </ol>
-</nav>
-
 
 <div class="form"><br>
-    <h1>Inscris-toi</h1> <br>
+    <h1><spring:message code="signUp"/></h1> <br>
 
 
     <form:form id = "signForm"
@@ -30,60 +22,69 @@
                action="/ecommerce/inscription/send"
                modelAttribute="customer">
 
-        <form:label path="lastName"> Nom * </form:label><br>
-        <form:input path="lastName"/>
-        <form:errors path="lastName"/>
+            <form:label path="lastName">* <spring:message code="lastName"/></form:label><br>
+            <form:input path="lastName"/><br>
+            <form:errors path="lastName" color="red"/>
+
+            <br><br>
+
+            <form:label path="firstName">* <spring:message code="firstName"/></form:label><br>
+            <form:input path="firstName"/><br>
+            <form:errors path="firstName" color="red"/>
+
+            <br><br>
+
+            <form:label path="birthdate" class="control-label " for="date">* <spring:message code="birthdate"/></form:label><br>
+            <form:input path="birthdate" id="date" name="date" placeholder="mm/dd/yyyy" type="date" /><br>
+            <form:errors path="birthdate" color="red"/>
+
         <br><br>
 
-        <form:label path="firstName"> Prénom * </form:label><br>
-        <form:input path="firstName"/>
-        <form:errors path="firstName"/>
+            <form:label path="deliveryAddress">* <spring:message code="deliveryAddress"/></form:label><br>
+            <form:input path="deliveryAddress" /><br>
+            <form:errors path="deliveryAddress" color="red"/>
+
         <br><br>
 
-        <form:label path="birthdate" class="control-label " for="date"> Date de naissance * </form:label><br>
-        <form:input path="birthdate" id="date" name="date" placeholder="mm/dd/yyyy" type="date" />
-        <form:errors path="birthdate"/>
+            <form:label path="phoneNumber"><spring:message code="phoneNumber"/></form:label><br>
+            <form:input path="phoneNumber" type="tel"/><br>
+            <form:errors path="phoneNumber" color="red"/>
+
         <br><br>
 
-        <form:label path="deliveryAddress"> Adresse de livraison * </form:label><br>
-        <form:input path="deliveryAddress" />
-        <form:errors path="deliveryAddress"/>
+            <form:label path="username">* <spring:message code="username"/> </form:label><br>
+            <form:input path="username"/><br>
+            <form:errors path="username" color="red"/>
+
         <br><br>
 
-        <form:label path="phoneNumber"> Numéro de téléphone </form:label><br>
-        <form:input path="phoneNumber" type="tel" pattern="[0-9]*"/>
-        <form:errors path="phoneNumber"/>
+            <form:label path="email">* <spring:message code="email"/></form:label><br>
+            <form:input path="email" type="email"/><br>
+            <form:errors path="email" color="red"/>
+
         <br><br>
 
-       <form:label path="username"> Nom d'utilisateur * </form:label><br>
-       <form:input path="username"/>
-        <form:errors path="username"/>
-       <br><br>
+            <form:label path="password">* <spring:message code="password"/></form:label><br>
+            <form:input path="password" type="password"/><br>
+            <form:errors path="password" color="red"/>
 
-        <form:label path="email"> Email * </form:label><br>
-        <form:input path="email" type="email"/>
-        <form:errors path="email"/>
         <br><br>
 
-       <form:label path="password"> Mot de passe * </form:label><br>
-       <form:input path="password" type="password"/>
-        <form:errors path="password"/>
-       <br><br>
+            <form:label path="confirmPassword">* <spring:message code="confirmPassword"/></form:label><br>
+            <form:input path="confirmPassword" type="password"/><br>
+            <form:errors path="confirmPassword" color="red"/>
 
-        <form:label path="confirmPassword"> Mot de passe * </form:label><br>
-        <form:input path="confirmPassword" type="password"/>
-        <form:errors path="confirmPassword"/>
         <br><br>
-
-       <p>* Champs obligatoires</p><br>
+       <p style="color: red">* <spring:message code="mandatory"/></p><br>
        <%--<form:checkbox path="remember" value="false" label="Se souvenir de moi"/>--%>
 
-        <form:button type="submit" class="btn btn-primary">S'inscrire</form:button>
+        <form:button type="submit" class="btn btn-primary"><spring:message code="signUp"/></form:button>
 
         <hr>
-        <p>Déjà inscris ? <a href="<spring:url value='/profile' />">Connecte-toi.</a></p>
+        <p><spring:message code="alreadyRegistered"/> ? <a href="<spring:url value='/login' />"><spring:message code="signIn"/></a></p>
 
     </form:form>
+    </div>
 </div>
 
 </body>

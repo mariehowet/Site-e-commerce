@@ -1,24 +1,16 @@
 <%@ page pageEncoding="UTF-8"
          contentType="text/html; charset=UTF-8"%>
-<%@ include file="include/importTags.jsp"%>
+<%@ include file="../include/importTags.jsp"%>
 <%@ taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
-    <title> Mes commandes </title>
     <link type="text/css" href="<spring:url value='/css/listOrders.css' />" rel="Stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </head>
 <body>
-<nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Accueil</li>
-        <li class="breadcrumb-item active" aria-current="page">Mes commandes</li>
-    </ol>
-</nav>
-
     <section class="ftco-section">
         <div class="container">
             <div class="mt-3">

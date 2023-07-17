@@ -23,12 +23,12 @@ import static com.spring.henallux.ecommerce.Constants.*;
 @RequestMapping(value="/inscription")
 public class InscriptionController extends SuperController {
 
-    private CustomerDataAccess customerDataAccess;
+    private CustomerDataAccess customerDAO;
 
     @Autowired
     public InscriptionController(CategoryTranslationDAO categoryTranslationDAO, CustomerDAO customerDao) {
         super(categoryTranslationDAO);
-        this.customerDataAccess = customerDao;
+        this.customerDAO = customerDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -45,8 +45,8 @@ public class InscriptionController extends SuperController {
     public String getFormData(@Valid @ModelAttribute(value="customer") Customer customer, final BindingResult errors){
 
         if (!errors.hasErrors()) {
-            if(!customer.getUsername().trim().equals("") && !customerDataAccess.getCustomersUsernames().contains(customer.getUsername())) {
-                if(!customer.getEmail().trim().equals("") && !customerDataAccess.getCustomersEmails().contains(customer.getEmail())) {
+            if(!customer.getUsername().trim().equals("") && !customerDAO.getCustomersUsernames().contains(customer.getUsername())) {
+                if(!customer.getEmail().trim().equals("") && !customerDAO.getCustomersEmails().contains(customer.getEmail())) {
                     if (!customer.getPassword().trim().equals("")) {
                         if (customer.getPassword().equals(customer.getConfirmPassword())) {
                             customer.setPassword(new BCryptPasswordEncoder().encode(customer.getPassword()));
@@ -57,7 +57,7 @@ public class InscriptionController extends SuperController {
                             customer.setEnabled(true);
 
                             try {
-                                customerDataAccess.save(customer);
+                                customerDAO.save(customer);
                             } catch (Exception e) {
                                 System.out.println(e.getMessage());
                                 return "integrated:signForm";

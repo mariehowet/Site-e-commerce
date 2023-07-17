@@ -32,14 +32,18 @@ public class ProfileController extends SuperController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model,
-                        @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam) {
+                        @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam, Customer customer) {
         model.addAttribute(CATEGORIES_TRANSLATIONS, this.getCategoriesTranslationsByCurrentLocale());
         urlParam.setName(null);
         urlParam.setValue(null);
         model.addAttribute(CURRENT_URL_PARAM, urlParam);
-        //model.addAttribute("firstName", customer.getFirstName());
-        //model.addAttribute("lastName", customer.getLastName());
-        //model.addAttribute("email", customer.getEmail());
+        model.addAttribute("firstName", customer.getFirstName());
+        model.addAttribute("lastName", customer.getLastName());
+        model.addAttribute("username", customer.getUsername());
+        model.addAttribute("phoneNumber", customer.getPhoneNumber());
+        model.addAttribute("deliveryAddress", customer.getDeliveryAddress());
+        model.addAttribute("birthdate", customer.getBirthdate());
+        model.addAttribute("email", customer.getEmail());
         return "integrated:profile";
     }
 

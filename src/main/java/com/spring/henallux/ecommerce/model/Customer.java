@@ -7,10 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -19,6 +16,7 @@ import java.util.List;
 public class Customer implements UserDetails {
 
     @NotEmpty
+    @Size(min=3, max=45)
     private String username;
 
     @NotEmpty
@@ -34,8 +32,10 @@ public class Customer implements UserDetails {
     private String lastName;
 
     @NotEmpty
+    @Size(min=3, max=60)
     private String deliveryAddress;
 
+    @Pattern(regexp = "[0-9]*")
     private String phoneNumber;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -47,6 +47,7 @@ public class Customer implements UserDetails {
     private String password;
 
     @NotEmpty
+    @Size(min=6, max=60)
     private String confirmPassword;
 
     private String authorities;

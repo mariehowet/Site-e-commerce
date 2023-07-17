@@ -32,9 +32,9 @@ public class AddressController extends SuperController {
         return "integrated:addressForm";
     }
     @RequestMapping(value="/send",method=RequestMethod.POST)
-    public String getFormData(@ModelAttribute(value="currentUser")Customer customer){
+    public String getFormData(@ModelAttribute(value="currentUser")Customer customer){ // TODO : @Valid ?? + bindingResults
 
-        return "redirect:/address";
+        return "redirect:/address"; // TODO : integrated or redirect
     }
 
 }

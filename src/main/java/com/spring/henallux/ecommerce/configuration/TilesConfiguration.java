@@ -18,7 +18,7 @@ public class TilesConfiguration {
     }
 
     @Bean
-    public ViewResolver tilesViewResolver () {
+    public ViewResolver tilesViewResolver () { // injection de dépendance
         final TilesViewResolver resolver = new TilesViewResolver();
         resolver.setViewClass(TilesView.class);
         return resolver;

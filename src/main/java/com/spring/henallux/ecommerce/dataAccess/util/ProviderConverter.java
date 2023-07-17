@@ -1,16 +1,15 @@
 package com.spring.henallux.ecommerce.dataAccess.util;
 
 
-import com.spring.henallux.ecommerce.dataAccess.entity.CustomerEntity;
-import com.spring.henallux.ecommerce.dataAccess.entity.ItemEntity;
-import com.spring.henallux.ecommerce.dataAccess.entity.TranslationEntity;
-import com.spring.henallux.ecommerce.model.Customer;
+import com.spring.henallux.ecommerce.dataAccess.entity.*;
+import com.spring.henallux.ecommerce.model.*;
 
-import com.spring.henallux.ecommerce.model.Item;
-import com.spring.henallux.ecommerce.model.Translation;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 @Component
 public class ProviderConverter {
@@ -36,6 +35,34 @@ public class ProviderConverter {
 
     public Item itemEntityToItemModel(ItemEntity itemEntity) {
         return mapper.map(itemEntity, Item.class);
+    }
+
+    public OrderEntity orderModelToOrderEntity(Order order) {
+        OrderEntity orderEntity = mapper.map(order, OrderEntity.class);
+        if (order.getId() != 0)
+            orderEntity.setId(order.getId());
+        orderEntity.setIsPaid(order.getIsPaid());
+        orderEntity.setOrderRowEntities(
+                order.getOrderRows()
+                        .stream()
+                        .map(orderRow -> {
+                            OrderRowEntity orderRowEntity = new OrderRowEntity();
+                            ItemEntity itemEntity = mapper.map(orderRow.getItem(), ItemEntity.class);
+                            orderRowEntity.setQuantity(orderRow.getQuantity());
+                            orderRowEntity.setRealPrice(orderRow.getRealPrice());
+                            orderRowEntity.setItem(itemEntity);
+                            orderRowEntity.setOrder(orderEntity);
+                           return orderRowEntity;
+                        })
+                        .collect(Collectors.toCollection(ArrayList::new)));
+        return orderEntity;
+    }
+
+    public Order orderEntityToOrderModel(OrderEntity orderEntity) {
+        Order order = mapper.map(orderEntity, Order.class);
+        order.setId(orderEntity.getId());
+        order.setIsPaid(orderEntity.getIsPaid());
+        return order;
     }
 }
 

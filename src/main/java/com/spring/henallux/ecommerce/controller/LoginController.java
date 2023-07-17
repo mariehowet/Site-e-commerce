@@ -25,12 +25,19 @@ public class LoginController extends SuperController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String home (Model model,
-                        @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam) {
+                        @ModelAttribute(value = Constants.CURRENT_URL_PARAM) UrlParam urlParam,
+                        @RequestParam(required = false, value = "error") String error) {
         model.addAttribute(CATEGORIES_TRANSLATIONS, this.getCategoriesTranslationsByCurrentLocale());
         urlParam.setName(null);
         urlParam.setValue(null);
         model.addAttribute(CURRENT_URL_PARAM, urlParam);
         model.addAttribute("customer", new Customer());
+
+        if (error != null){
+            model.addAttribute("error", "error");
+            return "integrated:loginForm";
+        }
+        
         return "integrated:loginForm";
     }
 

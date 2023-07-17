@@ -1,9 +1,9 @@
 -- Tables dont il faut ajouter toutes les valeurs :
 -- language
 INSERT INTO language (language_id)
-VALUE ('fr');
+    VALUE ('fr');
 INSERT INTO language (language_id)
-VALUE ('en');
+    VALUE ('en');
 -- test
 SELECT *
 FROM language;
@@ -11,17 +11,17 @@ FROM language;
 -- item_category
 
 INSERT INTO item_category (id)
-VALUE ('tshirts');
+    VALUE ('tshirts');
 INSERT INTO item_category (id)
-VALUE ('sweatshirts');
+    VALUE ('sweatshirts');
 INSERT INTO item_category (id)
-VALUE ('coats');
+    VALUE ('coats');
 INSERT INTO item_category (id)
-VALUE ('trousers');
+    VALUE ('trousers');
 INSERT INTO item_category (id)
-VALUE ('shoes');
+    VALUE ('shoes');
 INSERT INTO item_category (id)
-VALUE ('skirts');
+    VALUE ('skirts');
 -- INSERT INTO item_category (id)
 -- VALUE ('shirts');
 -- INSERT INTO item_category (id)
@@ -204,33 +204,3 @@ INSERT INTO customer (username, email, password, first_name, last_name, delivery
 VALUES ('caro', 'etu45806@henallux.be', 'password3', 'Caroline', 'Dubois', 'sais pas', 'sais pas', '2001-08-03', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
 VALUES  ('memel', 'melvinparache@hotmail.be','$2a$10$b6NNXDj7f23qRGQHa7H.e.wN4griKtjRGKDt5oKK.lXiKX1slCohK', 'Melvin', 'Parache', 'Rue haynol', '0496', '2002-01-17', 'ROLE-USER', true, true, true, true);
--- test
-SELECT *
-FROM customer;
-
--- order
-INSERT INTO `order` (date, is_paid, customer_id)
-VALUES (CURDATE(), true, 'mama');
-INSERT INTO `order` (date, is_paid, customer_id)
-VALUES ('2022-11-05', false, 'caro');
-INSERT INTO `order` (date, is_paid, customer_id)
-VALUES (CURDATE(), true, 'caro');
--- test
-SELECT *
-FROM `order`;
-
--- order_row
-INSERT INTO order_row (quantity, real_price, order_id, item_id)
-VALUES (3, 10, 1, 1);
-INSERT INTO order_row (quantity, real_price, order_id, item_id)
-VALUES (1, 11, 1, 5);
-INSERT INTO order_row (quantity, real_price, order_id, item_id)
-VALUES (2, 15, 2, 7);
--- INSERT INTO order_row (quantity, real_price, order_id, item_id)
--- VALUES (1, 35, 3, 35);
--- INSERT INTO order_row (quantity, real_price, order_id, item_id)
--- VALUES (1, 12, 2, 21);
-
--- test
-SELECT *
-FROM order_row;

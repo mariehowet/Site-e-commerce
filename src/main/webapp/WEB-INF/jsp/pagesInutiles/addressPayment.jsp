@@ -7,7 +7,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="include/importTags.jsp"%>
+<%@ include file="../include/importTags.jsp"%>
 
 <html>
 <head>
@@ -18,13 +18,6 @@
 
 </head>
 <body>
-<nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Accueil</li>
-        <li class="breadcrumb-item" aria-current="page">Panier</li>
-        <li class="breadcrumb-item active" aria-current="page">Adresse</li>
-    </ol>
-</nav>
 <div class="container
     my-5 py-5">
     <div class="row">

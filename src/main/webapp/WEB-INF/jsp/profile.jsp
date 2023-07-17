@@ -3,10 +3,10 @@
 <%@ include file="include/importTags.jsp"%>
 <%@ taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <html>
 <head>
-    <title> Profil </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -59,131 +59,58 @@
             }
         }
 
-
     </style>
 </head>
 <body>
 
 
-<!-- Vertical navbar -->
-<div class="vertical-nav" id="sidebar">
-
-
-    <ul class="nav flex-column bg-white mb-0">
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                Home
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                Mes commandes
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-                Mon adresse
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-                Déconnexion
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- End vertical navbar -->
-
-
-<!-- Page content holder -->
-<div class="page-content p-5" id="content">
-
-    <!-- Demo content -->
-    <h2 class="display-4">NOM</h2>
-            <div class="bg-white p-5 rounded my-5 shadow-sm">
-                <p class="lead font-italic mb-0 text-muted"><div class="mb-3 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                </div>
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-primary mb-2">Modifier</button>
-                </div>
-                </div>
-                </p>
-                <div class="mb-3 row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Mot de passe</label>
-                    <div class="col-sm-3">
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="********">
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary mb-2">Modifier</button>
-                    </div>
-
-                </div>
-            </div>
+<div class="py-5 container">
+    <div class="row justify-content-between pb-2 mb-4 border-bottom">
+        <div class="col-md-2">
+            <h2><spring:message code="profile"/></h2>
+        </div>
+    </div>
+    <form class="row g-3">
+        <div class="col-md-6">
+            <label for="profileName" class="form-label"><spring:message code="lastName"/></label>
+            <input type="text" class="form-control" id="profileName" value="${pageContext.request.userPrincipal.principal.lastName}" disabled readonly>
         </div>
 
+        <div class="col-md-6">
+            <label for="profileFirstName" class="form-label"><spring:message code="firstName"/></label>
+            <input type="text" class="form-control" id="profileFirstName" value="${pageContext.request.userPrincipal.principal.firstName}" disabled readonly>
+        </div>
 
+        <div class="col-md-6">
+            <label for="profileAlias" class="form-label"><spring:message code="username"/></label>
+            <input type="text" class="form-control" id="profileAlias" value="${pageContext.request.userPrincipal.principal.username}" disabled readonly>
+        </div>
 
+        <div class="col-md-6">
+            <label for="profileTelNumber" class="form-label"><spring:message code="phoneNumber"/></label>
+            <input type="tel" class="form-control" id="profileTelNumber" value="${pageContext.request.userPrincipal.principal.phoneNumber != null ? pageContext.request.userPrincipal.principal.phoneNumber : 'Pas de numéro de téléphone'}" disabled readonly>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label"><spring:message code="birthdate"/></label>
+            <input type="date" class="form-control"  value="${SimpleDateFormat("YYYY-MM-dd").format(pageContext.request.userPrincipal.principal.birthdate)}" disabled readonly>
+        </div>
+
+        <div class="col-12">
+            <label for="profileEmail" class="form-label"><spring:message code="email"/></label>
+            <input type="email" class="form-control" id="profileEmail" value="${pageContext.request.userPrincipal.principal.email}" disabled readonly>
+        </div>
+
+        <div class="col-12">
+            <label for="profileAddress" class="form-label"><spring:message code="deliveryAddress"/></label>
+            <input type="text" class="form-control" id="profileAddress" value="${pageContext.request.userPrincipal.principal.deliveryAddress}" disabled readonly>
+        </div>
+    </form>
+</div>
     </div>
 
 </div>
-<!-- End demo content -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%--
-<form:form id = "profile"
-           method="POST"
-           action="/ecommerce/profile"
-           modelAttribute="currentUser">
-<form:button>Mes commandes</form:button><br>
-<form:button>Mon adresse</form:button><br>
-<form:button>Déconnexion</form:button><br>
-</form:form>
-
-<div class="form">
-    <h1>Profil</h1> <br>
-    <h2>Nom</h2>
-    <br>
-    <p>email</p>
-    <form:form id = "profile"
-               method="POST"
-               action="/ecommerce/profile"
-               modelAttribute="currentUser">
-    <form:button>Modifier</form:button>
-        <br><br>
-        <p>mdp</p>
-        <form:button>Modifier</form:button>
-        <br><br><br>
-        <form:label path="password"> Mot de passe  actuel * </form:label><br>
-        <form:input path="password"/>
-        <br><br>
-        <form:label path="password"> Nouveau mot de passe * </form:label><br>
-        <form:input path="password"/>
-        <br><br>
-        <form:button>Confirmer</form:button>
-        <br>
-
-    </form:form>
-
---%>
 </div>
 </body>
 </html>

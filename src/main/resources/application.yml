@@ -4,6 +4,7 @@ server:
     contextPath: /ecommerce
 spring:
   datasource:
-    password: MySQLPourProjetJava2022
+    password: root
     url: jdbc:mysql://localhost:3306/ecommerce_db?user=root
     driverClassName: com.mysql.cj.jdbc.Driver
+

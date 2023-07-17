@@ -1,24 +1,17 @@
 <%@ page pageEncoding="UTF-8"
          contentType="text/html; charset=UTF-8"%>
-<%@ include file="include/importTags.jsp"%>
+<%@ include file="../include/importTags.jsp"%>
 <%@ taglib prefix="form"  uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
 <head>
-    <title> Adresse </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 </head>
 <body>
-<nav aria-label="breadcrumb" style="padding-left: 10px" class="navbar bg-light">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">Accueil</li>
-        <li class="breadcrumb-item active" aria-current="page">Mon adresse</li>
-    </ol>
-</nav>
 <div class="container">
 <form class="row g-3 m-2" >
     <h1 class="h3 mb-3 font-weight-normal">Mon adresse</h1>

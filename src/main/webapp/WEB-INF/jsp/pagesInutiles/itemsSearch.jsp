@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="include/importTags.jsp"%>
+<%@ include file="../include/importTags.jsp"%>
 
 <html>
 <head>
