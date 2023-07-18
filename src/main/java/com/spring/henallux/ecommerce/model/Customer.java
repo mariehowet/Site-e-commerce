@@ -40,6 +40,7 @@ public class Customer implements UserDetails {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull
+    @Past
     private Date birthdate;
 
     @NotEmpty

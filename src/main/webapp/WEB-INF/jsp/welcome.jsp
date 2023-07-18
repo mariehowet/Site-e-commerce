@@ -78,6 +78,38 @@
                 </div>
             </c:forEach>
         </div>
+        <!-- Partie cartes d'items random
+        <div class="card" style="width: 18rem;" >
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp" class="card-img-top" alt="remplasse image">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Nom de l'article | taille ...</h5>
+                <p class="card-text">Prix : 10€</p>
+                <p class="card-text">Vient de chez ...</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;" >
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp" class="card-img-top" alt="remplasse image">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Nom de l'article | taille ...</h5>
+                <p class="card-text">Prix : 10€</p>
+                <p class="card-text">Vient de chez ...</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;" >
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img5.webp" class="card-img-top" alt="remplasse image">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">Nom de l'article | taille ...</h5>
+                <p class="card-text">Prix : 10€</p>
+                <p class="card-text">Vient de chez ...</p>
+            </div>
+        </div>
+        -->
     </div>
 </body>
 </html>

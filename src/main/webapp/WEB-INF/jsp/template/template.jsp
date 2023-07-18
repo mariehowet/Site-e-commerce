@@ -94,7 +94,7 @@
     </div>
 </header>
 <!--Contenu de chaque page jsp---->
-<div>
+<div style="min-height: 800px">
     <tiles:insertAttribute name="main-content"/>
 </div>
 
