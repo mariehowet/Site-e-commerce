@@ -1,3 +1,13 @@
+-- Clear de la BD
+DELETE FROM order_row;
+DELETE FROM `order`;
+DELETE FROM customer;
+DELETE FROM item;
+DELETE FROM translation;
+DELETE FROM language;
+DELETE FROM item_category;
+
+
 -- Tables dont il faut ajouter toutes les valeurs :
 -- language
 INSERT INTO language (language_id)
@@ -197,7 +207,7 @@ FROM item;
 -- Tables avec quelques valeurs pour les essais :
 -- customer
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
-VALUES ('juju', 'etu47233@henallux.be', 'password1', 'Julien', 'Hanquet', 'Rue Jean-Baptiste Fichefet 58, 5100 Namur', '0499637147', '1999-07-17', 'ROLE_USER', true, true, true, true);
+VALUES ('juju', 'etu47233@henallux.be', '$2a$10$vCrL/M1Ihp9fHFKtx/GpjeBc9lPLtWmiWDTmv0lGE8ZReCiqyICOW', 'Julien', 'Hanquet', 'Rue de la chocolaterie 58, 5000 Namur', '0499999999', '1999-07-17', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
 VALUES ('mama', 'etu47124@henallux.be', 'password2', 'Marie', 'Howet', 'sais pas', 'sais pas', '2000-07-25', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
