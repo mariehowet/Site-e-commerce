@@ -209,8 +209,8 @@ FROM item;
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
 VALUES ('juju', 'etu47233@henallux.be', '$2a$10$vCrL/M1Ihp9fHFKtx/GpjeBc9lPLtWmiWDTmv0lGE8ZReCiqyICOW', 'Julien', 'Hanquet', 'Rue de la chocolaterie 58, 5000 Namur', '0499999999', '1999-07-17', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
-VALUES ('mama', 'etu47124@henallux.be', 'password2', 'Marie', 'Howet', 'sais pas', 'sais pas', '2000-07-25', 'ROLE_USER', true, true, true, true);
+VALUES ('mama', 'etu47124@henallux.be', '$2a$10$vCrL/M1Ihp9fHFKtx/GpjeBc9lPLtWmiWDTmv0lGE8ZReCiqyICOW', 'Marie', 'Howet', 'sais pas', 'sais pas', '2000-07-25', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
-VALUES ('caro', 'etu45806@henallux.be', 'password3', 'Caroline', 'Dubois', 'sais pas', 'sais pas', '2001-08-03', 'ROLE_USER', true, true, true, true);
+VALUES ('caro', 'etu45806@henallux.be', '$2a$10$vCrL/M1Ihp9fHFKtx/GpjeBc9lPLtWmiWDTmv0lGE8ZReCiqyICOW', 'Caroline', 'Dubois', 'sais pas', 'sais pas', '2001-08-03', 'ROLE_USER', true, true, true, true);
 INSERT INTO customer (username, email, password, first_name, last_name, delivery_address, phone_number, birthdate, authorities, account_non_expired, account_non_locked, credentials_non_expired, enabled)
 VALUES  ('memel', 'melvinparache@hotmail.be','$2a$10$b6NNXDj7f23qRGQHa7H.e.wN4griKtjRGKDt5oKK.lXiKX1slCohK', 'Melvin', 'Parache', 'Rue haynol', '0496', '2002-01-17', 'ROLE-USER', true, true, true, true);

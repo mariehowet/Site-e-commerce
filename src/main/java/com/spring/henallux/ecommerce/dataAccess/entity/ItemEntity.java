@@ -24,10 +24,21 @@ public class ItemEntity {
     @Column(name="thrift_shop")
     private String thriftShop;
     @Column(name="category_Id")
-    private String categoryId; // TODO : @JoinColumn @ManyToOne ???
-
+    private String categoryId;
 
     public ItemEntity() {
+    }
+
+    public ItemEntity(Integer id, String label, double price, String picture, String brand, String size, String target, String thriftShop, String categoryId) {
+        setId(id);
+        setLabel(label);
+        setPrice(price);
+        setPicture(picture);
+        setBrand(brand);
+        setSize(size);
+        setTarget(target);
+        setThriftShop(thriftShop);
+        setCategoryId(categoryId);
     }
 
     public Integer getId() {

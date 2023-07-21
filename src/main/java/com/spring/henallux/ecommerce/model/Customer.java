@@ -20,7 +20,7 @@ public class Customer implements UserDetails {
     private String username;
 
     @NotEmpty
-    @Email
+    @Pattern(regexp = "[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}")
     private String email;
 
     @NotEmpty
@@ -36,6 +36,7 @@ public class Customer implements UserDetails {
     private String deliveryAddress;
 
     @Pattern(regexp = "[0-9]*")
+    @Size(min=7, max=15)
     private String phoneNumber;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

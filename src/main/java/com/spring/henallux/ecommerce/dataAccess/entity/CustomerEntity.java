@@ -10,10 +10,6 @@ import java.util.Date;
 @Entity
 @Table(name="customer")
 public class CustomerEntity {
-    public CustomerEntity() {
-
-    }
-
     @Id
     @Column(name="username")
     private String username;
@@ -53,6 +49,26 @@ public class CustomerEntity {
 
     @Column(name="enabled")
     private Boolean enabled;
+
+    public CustomerEntity() {
+
+    }
+    
+    public CustomerEntity(String username, String email, String password, String firstName, String lastName, String deliveryAddress, String phoneNumber, Date birthdate, String authorities, Boolean accountNonExpired, Boolean accountNonLocked, Boolean credentialsNonExpired, Boolean enabled) {
+        setUsername(username);
+        setEmail(email);
+        setPassword(password);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setDeliveryAddress(deliveryAddress);
+        setPhoneNumber(phoneNumber);
+        setBirthdate(birthdate);
+        setAuthorities(authorities);
+        setAccountNonExpired(accountNonExpired);
+        setAccountNonLocked(accountNonLocked);
+        setCredentialsNonExpired(credentialsNonExpired);
+        setEnabled(enabled);
+    }
 
     public void setUsername(String username) {
         this.username = username;

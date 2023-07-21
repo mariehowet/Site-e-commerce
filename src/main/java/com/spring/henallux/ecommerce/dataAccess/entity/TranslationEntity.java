@@ -1,14 +1,12 @@
 package com.spring.henallux.ecommerce.dataAccess.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="translation")
 public class TranslationEntity {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
 
@@ -22,6 +20,13 @@ public class TranslationEntity {
     private String categoryId;
 
     public TranslationEntity() {
+    }
+    
+    public TranslationEntity(Integer id, String name, String languageId, String categoryId) {
+        setId(id);
+        setName(name);
+        setLanguageId(languageId);
+        setCategoryId(categoryId);
     }
 
     public Integer getId() {
