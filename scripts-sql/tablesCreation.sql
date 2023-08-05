@@ -22,31 +22,14 @@ CREATE TABLE customer(
     enabled BOOLEAN DEFAULT NULL,
     CONSTRAINT CHK_customer CHECK (email LIKE '%@%.%')
 );
--- DF customer
--- email -> password
--- email -> firstName
--- email -> lastName
--- email -> deliveryAdress
--- email -> phoneNumber
--- email -> birthdate
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
 
 CREATE TABLE language(
     language_id VARCHAR(255) PRIMARY KEY
 );
--- DF language
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
+
 CREATE TABLE item_category(
     id VARCHAR(255) PRIMARY KEY
 );
--- DF item_category
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
 
 CREATE TABLE translation(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -56,13 +39,7 @@ CREATE TABLE translation(
     FOREIGN KEY (language_id) REFERENCES language(language_id),
     FOREIGN KEY (category_id) REFERENCES item_category(id)
 );
--- DF translation
--- id -> name
--- id -> language_id
--- id -> category_id
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
+
 
 CREATE TABLE `order`(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -70,15 +47,9 @@ CREATE TABLE `order`(
     is_paid BOOLEAN NOT NULL,
     discount DECIMAL NOT NULL,
     customer_id VARCHAR(255),
-    FOREIGN KEY (customer_id) REFERENCES customer(username)
+    FOREIGN KEY (customer_id) REFERENCES customer(username),
+    CONSTRAINT CHK_order CHECK (discount >= 0)
 );
--- DF language
--- id -> date
--- id -> is_paid
--- id -> customer_id
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
 
 CREATE TABLE item(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -93,18 +64,6 @@ CREATE TABLE item(
     FOREIGN KEY (category_id) REFERENCES item_category(id),
     CONSTRAINT CHK_item CHECK (price >= 0 AND target IN ('m', 'f', 'c'))
 );
--- DF language
--- id -> label
--- id -> price
--- id -> picture
--- id -> brand
--- id -> size
--- id -> target
--- id -> thrift_shop
--- id -> category_id
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
 
 CREATE TABLE order_row(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -116,13 +75,3 @@ CREATE TABLE order_row(
     FOREIGN KEY (item_id) REFERENCES item(id),
     CONSTRAINT CHK_order_row CHECK (quantity >= 1 AND real_price >= 0)
 );
--- DF language
--- id -> quantity
--- id -> real_price
--- id -> order_id
--- id -> item_id
--- 1NF: ok
--- 2NF: ok
--- 3NF: ok
-
--- Ne pas oublier de mettre l'image en obligatoiremagickey

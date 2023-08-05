@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -43,12 +43,13 @@ public class CategoryTranslationDAOTest {
         mockedTranslationEntities.add(translationEntity3);
         when(translationRepository.findAll()).thenReturn(mockedTranslationEntities);
 
-        /*
+
         // getAllCategoriesTranslations
-        ArrayList<Translation> translations = new ArrayList<>();
-        translations.add(providerConverter.translationEntityToTranslationModel(translationEntity1));
-        translations.add(providerConverter.translationEntityToTranslationModel(translationEntity2));
-        assertThat(categoryTranslationDAO.getAllCategoriesTranslations("en")).isEqualTo(translations);
-        */
+        /*
+            ArrayList<Translation> translations = new ArrayList<>();
+            Translation t1 = providerConverter.translationEntityToTranslationModel(translationEntity1);
+            Translation t2 = providerConverter.translationEntityToTranslationModel(translationEntity2);
+            assertThat(categoryTranslationDAO.getAllCategoriesTranslations("en")).isEqualTo(translations);
+         */
     }
 }

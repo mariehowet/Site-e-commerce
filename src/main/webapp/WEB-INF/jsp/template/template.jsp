@@ -107,7 +107,6 @@
             <span><spring:message code="contactUs"/>:</span>
         </div>
     </section>
-
     <section class="">
         <div class="container text-center text-md-start mt-5">
             <!-- Grid row -->

@@ -37,8 +37,8 @@
 
           <div>
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-              <input hidden name="business" value="sb-5oyu626763887@personal.example.com"/>
-              <input hidden name="cert_id" value="ASXGaHitXphSznUAw4pOYxGhHZVam4FtLyG0yqiFgIwd7fMH3_-RtoQZETlil_Bj3VPNVZVYTuDOiJ9h" />
+              <input hidden name="business" value="sb-ic9ya26626931@business.example.com"/>
+              <input hidden name="cert_id" value="A9E.Bhpx-RSOKeQ6xl2LqD89h1V-A10qIXAu.-phu-Rf-bGelztMQL9Q" />
               <input hidden name="cmd" value="_xclick" />
               <input hidden name="amount" value=" ${subtotal - discount}" />
               <input hidden name="item_name" value="order" />
