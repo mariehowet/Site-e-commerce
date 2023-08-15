@@ -1,18 +1,11 @@
 package com.spring.henallux.ecommerce.service;
 
-import com.spring.henallux.ecommerce.model.Basket;
 import com.spring.henallux.ecommerce.model.Item;
 import com.spring.henallux.ecommerce.model.OrderRow;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class BasketServiceTest {
     private BasketService basketService;

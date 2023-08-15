@@ -47,7 +47,6 @@ public class CustomerDAOTest {
         usernames.add("juju");
         usernames.add("mama");
         assertThat(customerDAO.getCustomersUsernames()).isEqualTo(usernames);
-        System.out.println(customerDAO.getCustomersUsernames());
 
         // GetCustomersEmail
         ArrayList<String> emails = new ArrayList<>();
@@ -56,13 +55,22 @@ public class CustomerDAOTest {
         assertThat(customerDAO.getCustomersEmails()).isEqualTo(emails);
 
         // FindCustomerByUsername
-        /*
-        CustomerEntity mockedCustomerEntity = new CustomerEntity();
-        when(customerRepository.findByUsername("juju")).thenReturn(mockedCustomerEntity);
-
-        Customer customer = providerConverter.customerEntityToCustomerModel(customerEntity1);
-        assertThat(customerDAO.findByUsername("juju")).isEqualTo(customer);
-        System.out.println(customerDAO.findByUsername("juju"));
-        */
+        when(customerRepository.findByUsername("juju")).thenReturn(customerEntity1);
+        Customer customerModel1 = new Customer();
+        customerModel1.setUsername("juju");
+        customerModel1.setEmail("etu47233@henallux.be");
+        customerModel1.setPassword("$2a$10$vCrL/M1Ihp9fHFKtx/GpjeBc9lPLtWmiWDTmv0lGE8ZReCiqyICOW");
+        customerModel1.setFirstName("Julien");
+        customerModel1.setLastName("Hanquet");
+        customerModel1.setDeliveryAddress("Rue de la chocolaterie 58, 5000 Namur");
+        customerModel1.setPhoneNumber("0499999999");
+        customerModel1.setBirthdate(new Date(1999, 7, 17));
+        customerModel1.setAuthorities("USER_ROLE");
+        customerModel1.setAccountNonLocked(true);
+        customerModel1.setAccountNonExpired(true);
+        customerModel1.setCredentialsNonExpired(true);
+        customerModel1.setEnabled(true);
+        when(providerConverter.customerEntityToCustomerModel(customerEntity1)).thenReturn(customerModel1);
+        assertThat(customerDAO.findByUsername("juju")).isEqualTo(customerModel1);
     }
 }
